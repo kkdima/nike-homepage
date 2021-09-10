@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+	font-display: swap;
+	font-family: 'Helvetica Neue';
+	font-style: normal;
+	font-weight: 400;
+	src: '/public/texgyreheros-regular-webfont.woff';
+	/* local('Helvetica Neue'),
+		local('Helvetica-Neue'),
+		local('Neue Helvetica'),
+		local('Neue-Helvetica'), */
+}
