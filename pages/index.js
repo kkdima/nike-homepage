@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import axios from 'axios';
 import { createApi } from 'unsplash-js';
-
-// import fetch from 'node-fetch';
-// global.fetch = fetch;
-
-// import Header from '../src/components/Header';
-// import Layout from '../src/components/Layout';
+import Section_One from '../src/components/homepage/section_1';
+import Section_Two from '../src/components/homepage/section_2';
+import Section_Three from '../src/components/homepage/section_3';
+import Section_Four from '../src/components/homepage/section_4';
+import Section_Five from '../src/components/homepage/section_5';
+import Section_Six from '../src/components/homepage/section_6';
+import Section_Seven from '../src/components/homepage/section_7';
+import Section_Eight from '../src/components/homepage/section_8';
 
 export default function Home() {
-	const [data, setData] = useState(null);
+	const [horizontalImages, setHorizontalImages] = useState(null);
+	const [verticalImages, setVerticalImages] = useState(null);
 
 	const unsplash = createApi({
 		accessKey: process.env.NEXT_PUBLIC_ACCESS_KEY,
@@ -22,13 +24,13 @@ export default function Home() {
 				query: 'sport',
 				orientation: 'landscape',
 				page: 1,
-				perPage: 10,
+				perPage: 20,
 				color: 'black_and_white',
 			})
 			.then((result) => {
 				if (result.type === 'success') {
-					setData(result);
-					console.log('fetched');
+					setHorizontalImages(result);
+					console.log('fetched Horizontal');
 				}
 			})
 			.catch(() => {
@@ -36,18 +38,40 @@ export default function Home() {
 			});
 	};
 
+	const fetchVerticalImages = async () => {
+		await unsplash.search
+			.getPhotos({
+				query: 'nike runner',
+				orientation: 'portrait',
+				page: 1,
+				perPage: 20,
+			})
+			.then((result) => {
+				if (result.type === 'success') {
+					setVerticalImages(result);
+					console.log(result);
+					console.log('fetched Vertical');
+				}
+			})
+			.catch(() => {
+				console.log('something went wrong w/ vertical');
+			});
+	};
+
 	useEffect(() => {
 		fetchImages();
+		fetchVerticalImages();
 	}, []);
 
-	if (data === null) {
+	if ((horizontalImages, verticalImages) === null) {
 		return <div>Loading...</div>;
-	} else if (data.errors) {
-		return (
-			<div>
-				<div>{data.errors[0]}</div>
-			</div>
-		);
+		// } else if (horizontalImages.errors && verticalImages.errors) {
+		// 	return (
+		// 		<div>
+		// 			<div>{horizontalImages.errors[0]}</div>
+		// 			<div>{verticalImages.errors[0]}</div>
+		// 		</div>
+		// 	);
 	} else {
 		return (
 			<div className="flex flex-col">
@@ -55,13 +79,15 @@ export default function Home() {
 					<title>Create Next App</title>
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
-				<main className="flex flex-col px-12">
-					<div
-						className="w-full h-xxll bg-cover pointer"
-						style={{
-							backgroundImage: `url(${data.response.results[1].urls.full})`,
-						}}
-					></div>
+				<main className="flex flex-col px-14 font-Helvetica-Neue overflow-hidden">
+					{/* <Section_One props={horizontalImages} />
+					<Section_Two props={horizontalImages} />
+					<Section_Three props={verticalImages} />
+					<Section_Four props={verticalImages} />
+					<Section_Five props={horizontalImages} />
+					<Section_Six />
+					<Section_Seven />
+					<Section_Eight props={horizontalImages} /> */}
 				</main>
 			</div>
 		);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Header from './Header';
-// import Footer from "./Footer";
+import Footer_One from './Footer_pt1';
 // import Cart from "./Cart";
 
 const Layout = (props) => (
@@ -9,7 +9,7 @@ const Layout = (props) => (
 		<Header />
 		{/* <Cart /> */}
 		<div className="">{props.children}</div>
-		{/* <Footer /> */}
+		<Footer_One />
 	</div>
 );
 

@@ -39,7 +39,7 @@ const Header = () => {
 					/>
 				</div>
 
-				<ul className="flex justify-between text-lg self-center font-medium">
+				<ul className="flex justify-between self-center font-medium">
 					<li className="mr-5 whitespace-nowrap">New Releases</li>
 					<li className="mr-5 pointer">Men</li>
 					<li className="mr-5">Women</li>
@@ -56,7 +56,7 @@ const Header = () => {
 							type="text"
 							name="name"
 							placeholder="Search"
-							className="rounded-full p-3 pl-10 bg-gray-100 form-input focus:outline-none"
+							className="rounded-full p-2 pl-10 bg-gray-100 border-none form-input focus:outline-none"
 						/>
 						<FiSearch className="absolute min-w-3 mt-3 ml-3" size="1.5rem" />
 					</form>
@@ -68,7 +68,7 @@ const Header = () => {
 			</div>
 			<div className="flex flex-col justify-center bg-gray-100 py-2">
 				<p className="text-sm font-medium self-center">Save Up to 40%</p>
-				<p className="underline self-center text-xs">
+				<p className="underline self-center text-xs mt-1 cursor-pointer">
 					Shop All Our New Markdowns
 				</p>
 			</div>

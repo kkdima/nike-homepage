@@ -3,13 +3,23 @@
 @tailwind utilities;
 
 @font-face {
-	font-display: swap;
 	font-family: 'Helvetica Neue';
+	src: '/fonts/HelveticaNeue.woff2' local('Helvetica Neue'),
+		local('Helvetica-Neue'), local('Neue Helvetica'), local('Neue-Helvetica');
+	font-display: swap;
 	font-style: normal;
 	font-weight: 400;
-	src: '/public/texgyreheros-regular-webfont.woff';
-	/* local('Helvetica Neue'),
-		local('Helvetica-Neue'),
-		local('Neue Helvetica'),
-		local('Neue-Helvetica'), */
+}
+
+@font-face {
+	font-family: 'Futura Condensed';
+	src: url('/fonts/FuturaCondMedium.woff2') format('woff2'),
+		url('/fonts/FuturaCondMedium.woff') format('woff');
+	font-weight: 100;
+	font-style: normal;
+	font-display: swap;
+}
+
+.smoothScrolling {
+	scroll-behavior: smooth;
 }
