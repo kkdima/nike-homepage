@@ -54,9 +54,15 @@ const Footer = () => {
 		setClickedKids(!clickedKids);
 	};
 
+	const ToggleHiddenMenu = () => {
+		console.log('test toggle');
+		setIsHovered(!isHovered);
+	};
+
 	return (
 		<motion.div layout className="font-helvetica-neue-medium">
 			<motion.div
+				onPointerLeave={() => ToggleHiddenMenu()}
 				layout
 				className="sm:flex justify-between max-w-880 md:m-auto p-7 md:p-14"
 			>
@@ -66,11 +72,6 @@ const Footer = () => {
 					title="Featured"
 					isHovered={isHovered}
 					setIsHovered={setIsHovered}
-					clickMenu={featuredClick}
-					isClicked={isFeaturedClicked}
-					isClickedThatHides1={isShoesClicked}
-					isClickedThatHides2={isClothingClicked}
-					isClickedThatHides3={isKidsClicked}
 				/>
 
 				<TopColumn

@@ -4,32 +4,19 @@ import { FeaturedSection } from './Footer_data';
 
 const FooterMenuColumn = (props) => {
 	const [isMobileTitleClicked, setIsMobileTitleClicked] = useState(false);
-	const {
-		width,
-		isHovered,
-		setIsHovered,
-		clickMenu,
-		isClickedThatHides1,
-		isClickedThatHides2,
-		isClickedThatHides3,
-	} = { ...props };
+	const { width, isHovered, setIsHovered } = { ...props };
 
 	const pressMobileTitle = () => {
 		setIsMobileTitleClicked(!isMobileTitleClicked);
 	};
 
-	const ToggleHiddenMenu = () => {
-		console.log('test');
-		setIsHovered(!isHovered);
+	const ShowMenu = () => {
+		console.log('test show');
+		setIsHovered(true);
 	};
 
 	return (
-		<motion.div
-			layout
-			onPointerLeave={() => ToggleHiddenMenu()}
-			onPointerEnter={() => ToggleHiddenMenu()}
-			className="border"
-		>
+		<motion.div layout onPointerEnter={() => ShowMenu()}>
 			<motion.h4
 				layout
 				className="cursor-pointer mb-6 md:mb-0 md:row-start-1"
@@ -84,7 +71,7 @@ const DepartmentsList = (props) => {
 					<motion.li
 						layout
 						key={menuItem.title}
-						className="mb-3 cursor-pointer pr-2"
+						className="mb-3 cursor-pointer pr-2 sm:w-40 hover:text-gray-800 whitespace-nowrap"
 						transition={{ ease: 'easeInOut', duration: 0.6 }}
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}

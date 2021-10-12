@@ -12,6 +12,7 @@ module.exports = {
 				'880': '880px',
 			},
 			spacing: {
+				
 				// prettier-ignore
 				'13': '3.25rem',
 				// prettier-ignore
