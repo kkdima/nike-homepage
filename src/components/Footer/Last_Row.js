@@ -38,7 +38,7 @@ const LastRow = (props) => {
 						return (
 							<motion.li
 								layout
-								key=""
+								key={menu.title}
 								className="pb-6 mr-3 opacity-40 hover:opacity-100 cursor-pointer"
 							>
 								{menu.title}

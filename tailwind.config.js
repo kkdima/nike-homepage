@@ -12,7 +12,6 @@ module.exports = {
 				'880': '880px',
 			},
 			spacing: {
-				
 				// prettier-ignore
 				'13': '3.25rem',
 				// prettier-ignore
@@ -26,6 +25,8 @@ module.exports = {
 			colors: {
 				'color-1': '#F8F8F8',
 				'nike-light-gray': '#757575',
+				'nike-light-gray-bg': '#f5f5f5',
+				'nike-light-gray-bg-hovered': '#E5E5E5',
 				'nike-ad': '#e7e7e7',
 				'nike-white': '#FFFFFF',
 				'nike-black': '#111111',

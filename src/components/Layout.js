@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Header from './Header';
+import Header from './Header/Header';
 import Footer from './Footer/Footer_main';
 import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 // import Cart from "./Cart";
@@ -8,7 +8,7 @@ import { AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 const Layout = (props) => (
 	<AnimatePresence>
 		<AnimateSharedLayout type="crossfade">
-			{/* <Header /> */}
+			<Header />
 			{/* <Cart /> */}
 			<div className="">{props.children}</div>
 			<Footer />
