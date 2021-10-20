@@ -1,16 +1,17 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { productsData } from '../../data/products_data';
 import { MdKeyboardArrowLeft, MdKeyboardArrowRight } from 'react-icons/md';
+import { motion } from 'framer-motion';
 
 const SectionFour = () => {
 	const [hideButtonLeft, setHideButtonLeft] = useState(true);
 	const [hideButtonRight, setHideButtonRight] = useState(false);
 	const [sliderWidth, setSliderWidth] = useState(0);
+	const itemContainer = useRef(null);
 	const carouselContainer = useRef(null);
 
 	const onHScroll = () => {
 		const el = carouselContainer.current.scrollLeft;
-
 		if (el > 0) {
 			setHideButtonLeft(false);
 		} else {
@@ -43,7 +44,8 @@ const SectionFour = () => {
 						className={`bg-gray-200 rounded-full my-auto mr-5 p-2 ${
 							!hideButtonLeft && `hover:bg-gray-300`
 						} ${hideButtonLeft && `opacity-40 cursor-default`}`}
-						onClick={() => scroll(-350)}
+						// onClick={() => scroll(itemContainer.current.clientWidth)}
+						onClick={() => scroll(-24 - itemContainer.current.scrollWidth)}
 					>
 						<MdKeyboardArrowLeft size="2rem" />
 					</button>
@@ -52,42 +54,45 @@ const SectionFour = () => {
 							!hideButtonRight && `hover:bg-gray-300`
 						}
 						${hideButtonRight && `opacity-40 cursor-default`}`}
-						onClick={() => scroll(350)}
+						// onClick={() => scroll(itemContainer.current.clientWidth)}
+						onClick={() => scroll(24 + itemContainer.current.scrollWidth)}
 					>
 						<MdKeyboardArrowRight size="2rem" />
 					</button>
 				</div>
 			</div>
-			<div className="">
-				<div
-					className="flex overflow-x-scroll smoothScrolling "
+			<motion.div>
+				<motion.div
 					ref={carouselContainer}
+					className="flex overflow-x-scroll smoothScrolling "
 					onScroll={() => onHScroll()}
 				>
 					{productsData.map((product) => {
-						// return <ItemCard key={product.id}
+						// const { product, itemContainer } = { ...props };
 						return (
-							<div key={product.id} className="">
-								<ItemCard product={product} />
-							</div>
+							<ItemCard
+								product={product}
+								key={product.id}
+								itemContainer={itemContainer}
+							/>
 						);
 					})}
-				</div>
-			</div>
+				</motion.div>
+			</motion.div>
 		</div>
 	);
 };
 
 export const ItemCard = (props) => {
-	const { product } = props;
+	const { product, itemContainer } = { ...props };
 	return (
-		<div className="mr-6 w-96 cursor-pointer">
+		<motion.div layout className="mr-6 cursor-pointer" ref={itemContainer}>
 			<div
-				className="bg-red-200 h-96 w-96 mb-6 bg-center bg-cover"
+				className="w-96 h-96 mb-6 bg-center bg-cover"
 				style={{
 					backgroundImage: `url(${product.image})`,
 				}}
-			></div>
+			/>
 			<div className="flex justify-between mb-10">
 				<div className="">
 					<p className="font-medium">{product.name}</p>
@@ -95,7 +100,7 @@ export const ItemCard = (props) => {
 				</div>
 				<p>${product.price}</p>
 			</div>
-		</div>
+		</motion.div>
 	);
 };
 

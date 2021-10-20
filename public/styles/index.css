@@ -47,7 +47,7 @@
 
 .smoothScrolling {
 	scroll-behavior: smooth;
-}
+} 
 
 @keyframes showAfterDelay {
 	from {

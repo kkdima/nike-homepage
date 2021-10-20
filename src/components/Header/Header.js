@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from 'react';
-import HamburgerMenu from 'react-hamburger-menu';
 import Promo from './Promo';
 import FirstRow from './FirstRow';
 import Search from './Search';
 import SearchOpened from './SearchOpened';
 import { FiHeart, FiShoppingBag } from 'react-icons/fi';
-import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 import { HeaderHolderVariants } from './Header_Variants';
+import HamburgerMenuIcon from './Hamburger_Menu_Icon';
+import HamburgerMenuOpened from './Hamburger_Menu_Opened';
+// import  HamburgerMenuOpened  from './Hamburger_Menu_Opened';
 
 const Header = () => {
 	const [width, setWidth] = useState(0);
-	const [isSearchToggled, setIsSearchToggled] = useState(false);
 	const [isHamburgerToggle, setIsHamburgerToggle] = useState(false);
+	const [isSearchToggled, setIsSearchToggled] = useState(false);
 	const [isScrolledY, setIsScrolledY] = useState(false);
 
 	useEffect(() => {
@@ -39,10 +41,7 @@ const Header = () => {
 			<FirstRow />
 
 			{/* Second row: */}
-			<motion.div
-				className="py-2 px-12 flex justify-between"
-				// variants={HeaderHolderVariants}
-				// animate={isSearchToggled ? 'opened' : 'closed'}
+			<motion.div className="py-2 px-6 lg:px-12 flex justify-between"
 			>
 				{/* Logo: */}
 				<AnimatePresence>
@@ -76,12 +75,12 @@ const Header = () => {
 					</li>
 				</ul> */}
 
-				<motion.div className="flex">
-					<motion.div className="w-9 h-9 mr-3 rounded-full hover:bg-nike-light-gray-bg-hovered">
-						<FiHeart className="m-auto mt-2 hidden lg:flex" size="1.4rem" />
+				<motion.div className="flex ">
+					<motion.div className="lg:order-2 w-9 h-9 hidden lg:flex mr-3 rounded-full hover:bg-nike-light-gray-bg-hovered">
+						<FiHeart className="m-auto mt-2" size="1.4rem" />
 					</motion.div>
 
-					<motion.div className=" self-center rounded-full mr-3 w-9 h-9 hover:bg-nike-light-gray-bg-hovered flex items-center justify-center">
+					<motion.div className="lg:order-last self-center rounded-full mr-3 w-9 h-9 hover:bg-nike-light-gray-bg-hovered flex items-center justify-center">
 						<FiShoppingBag size="1.4rem" />
 					</motion.div>
 
@@ -92,26 +91,22 @@ const Header = () => {
 						/>
 					) : (
 						<Search
+							className="lg:order-first-1"
 							isSearchToggled={isSearchToggled}
 							setIsSearchToggled={setIsSearchToggled}
 						/>
 					)}
 
-					{!isSearchToggled && (
-						<motion.div className="w-9 h-9 rounded-full hover:bg-nike-light-gray-bg-hovered">
-							<HamburgerMenu
-								className="lg:hidden mt-3 ml-2"
-								isOpen={isHamburgerToggle}
-								menuClicked={() => setIsHamburgerToggle(!isHamburgerToggle)}
-								width={20}
-								height={14}
-								strokeWidth={2}
-								rotate={0}
-								color="black"
-								borderRadius={0}
-								animationDuration={0.5}
-							/>
-						</motion.div>
+					{!isHamburgerToggle ? (
+						<HamburgerMenuIcon
+							isHamburgerToggle={isHamburgerToggle}
+							setIsHamburgerToggle={setIsHamburgerToggle}
+						/>
+					) : (
+						<HamburgerMenuOpened
+							isHamburgerToggle={isHamburgerToggle}
+							setIsHamburgerToggle={setIsHamburgerToggle}
+						/>
 					)}
 				</motion.div>
 			</motion.div>

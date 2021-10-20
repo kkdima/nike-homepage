@@ -16,6 +16,8 @@ module.exports = {
 				'13': '3.25rem',
 				// prettier-ignore
 				'880': '880px',
+				// prettier-ignore
+				'320': '580px',
 			},
 			gridTemplateColumns: {},
 			gridTemplateRows: {

@@ -16,11 +16,11 @@ const BottomColumn = (props) => {
 	};
 
 	return (
-		<motion.div layout className="sm:mr-12 md:mr-20">
+		<motion.div layout className="sm:mr-12 lg:mr-20">
 			<motion.h3
 				layout
 				onClick={toggle}
-				className="font-tradegothic text-white uppercase cursor-pointer flex justify-between pb-6 sm:pb-3"
+				className="font-tradegothic text-white uppercase whitespace-nowrap cursor-pointer flex justify-between pb-6 sm:pb-3"
 			>
 				{title}
 				<motion.div className="sm:hidden">

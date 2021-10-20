@@ -79,15 +79,15 @@ export default function Home() {
 					<title>Create Next App</title>
 					<link rel="icon" href="/favicon.ico" />
 				</Head>
-				<main className="flex flex-col px-14 font-helvetica-neue-medium-cond overflow-hidden">
-					{/* <Section_One props={horizontalImages} />
+				<main className="flex flex-col px-6 lg:px-12 font-helvetica-neue-medium-cond overflow-hidden">
+					<Section_One props={horizontalImages} />
 					<Section_Two props={horizontalImages} />
 					<Section_Three props={verticalImages} />
 					<Section_Four props={verticalImages} />
 					<Section_Five props={horizontalImages} />
 					<Section_Six />
 					<Section_Seven />
-					<Section_Eight props={horizontalImages} /> */}
+					<Section_Eight props={horizontalImages} />
 				</main>
 			</div>
 		);

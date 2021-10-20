@@ -9,11 +9,11 @@ const Section_One = (props) => {
 				backgroundImage: `url(${props.props.response.results[1].urls.full})`,
 			}}
 		>
-			<div className="flex flex-col text-white h-full p-12 justify-end">
-				<p className="uppercase text-5xl font-futura tracking-tighter">
+			<div className="flex flex-col h-full p-12 justify-end">
+				<p className="uppercase text-white text-5xl font-futura tracking-tighter">
 					Yardrunners <br /> collection
 				</p>
-				<p className="my-5">
+				<p className="my-5 text-white">
 					Styles inspired by storied HBCUs and their <br /> trailblizing
 					Yardrunner alums.
 				</p>

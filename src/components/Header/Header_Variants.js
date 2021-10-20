@@ -67,3 +67,57 @@ export const HeaderHolderVariants = {
 		},
 	},
 };
+
+export const HamburgerMenuBackground = {
+	initial: {
+		opacity: 0,
+		transition: {
+			duration: 0.5,
+		},
+	},
+	animate: {
+		opacity: 1,
+		transition: {
+			duration: 0.3,
+		},
+	},
+};
+
+export const HamburgerMenuSide = {
+	initial: {
+		opacity: 0,
+		x: 100,
+		transition: {
+			duration: 0.5,
+		},
+	},
+	animate: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.3,
+		},
+	},
+};
+
+export const FirstRow = {
+	initial: {
+		x: 100,
+		transition: {
+			duration: 0.5,
+		},
+	},
+	animate: {
+		opacity: 1,
+		x: 0,
+		transition: {
+			duration: 0.3,
+		},
+	},
+	exit: {
+		y: -100,
+		transition: {
+			duration: 0.3,
+		},
+	},
+};

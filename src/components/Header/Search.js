@@ -5,15 +5,22 @@ import { SearchVariants } from './Header_Variants';
 
 const Search = (props) => {
 	const { isSearchToggled, setIsSearchToggled } = { ...props };
+
 	return (
 		<AnimateSharedLayout>
 			<AnimatePresence>
 				<motion.div
 					layout
-					className={`relative flex mr-3`}
+					className={`relative flex mr-3 lg:w-48 lg:bg-nike-light-gray-bg lg:hover:bg-nike-light-gray-bg-hovered lg:rounded-full`}
+					onClick={() => {
+						setIsSearchToggled(!isSearchToggled);
+					}}
 					// variants={SearchVariants}
 					// animate={isSearchToggled ? 'opened' : 'closed'}
 				>
+					<motion.p className="hidden lg:flex absolute left-9 top-1.5 opacity-40">
+						Search
+					</motion.p>
 					{isSearchToggled && (
 						<motion.input
 							layout
