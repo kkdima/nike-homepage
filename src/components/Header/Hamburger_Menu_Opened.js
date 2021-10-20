@@ -8,9 +8,6 @@ import Button_shop from '../ui/button_shop';
 import useLockBodyScroll from '../../hooks/use-lock-body-scroll';
 
 const HamburgerMenuOpened = (props) => {
-	// const { isHamburgerToggle, setIsHamburgerToggle } = { ...props };
-	console.log(props);
-
 	useLockBodyScroll();
 
 	return (
@@ -26,7 +23,7 @@ const HamburgerMenuOpened = (props) => {
 					variants={HamburgerMenuSide}
 					initial="initial"
 					animate="animate"
-					className="flex w-320 flex-col bg-white right-0 top-0 border overflow-scroll py-2"
+					className="flex flex-col bg-white right-0 top-0 border overflow-scroll py-2"
 					layout
 				>
 					<div className="px-6 relative flex justify-end">
@@ -36,11 +33,11 @@ const HamburgerMenuOpened = (props) => {
 						/>
 					</div>
 					<div className="px-9 flex flex-col">
-						<motion.ul className="">
+						<motion.ul className="flex-shrink-0">
 							{hamburgerSideMenu.map((department) => (
 								<motion.li
 									key={department.title}
-									className="cursor-pointer mb-4 flex justify-between text-2xl"
+									className="cursor-pointer whitespace-nowrap flex-shrink-0 mb-4 flex justify-between text-2xl"
 								>
 									{department.title}
 									<IoIosArrowForward className="mt-2" size="1.2rem" />

@@ -30,6 +30,7 @@ module.exports = {
 				'nike-light-gray-bg': '#f5f5f5',
 				'nike-light-gray-bg-hovered': '#E5E5E5',
 				'nike-ad': '#e7e7e7',
+				'nike-main-ad': '#F1F0EB',
 				'nike-white': '#FFFFFF',
 				'nike-black': '#111111',
 			},

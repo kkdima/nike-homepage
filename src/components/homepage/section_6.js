@@ -24,12 +24,13 @@ const Section_Six = () => {
 		<div className="text-xl font-medium overflow-x-scroll">
 			<h3 className="text-2xl mt-16 mb-5">Matching Sets</h3>
 			<div
-				className={`flex ${styles.container} overflow-x-scroll smoothScrolling`}
+				className={`flex ${styles.container} overflow-x-scroll smoothScrolling lg:grid lg:grid-cols-3 lg:gap-10`}
 			>
 				{images.map((department) => (
 					<div
-						className={`flex-shrink-0 w-2/3 mr-6 smoothScrolling font-medium cursor-pointer ${styles.child}`}
+						className={`flex-shrink-0 w-2/3 lg:w-auto mr-6 lg:mr-0 smoothScrolling font-medium cursor-pointer ${styles.child}`}
 						key={department.id}
+						f
 					>
 						<img
 							src={department.src}

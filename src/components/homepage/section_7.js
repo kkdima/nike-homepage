@@ -5,7 +5,7 @@ const Section_Seven = () => {
 	return (
 		<div className="text-xl font-medium">
 			<p className="text-2xl mt-16 mb-5">Members Benefits</p>
-			<div className="w-full bg-nike-ad p-16">
+			<div className="w-full bg-nike-main-ad p-16">
 				<img
 					src="/nike-4-logo-svg-vector.svg"
 					width="100"
