@@ -68,9 +68,18 @@ const HamburgerMenuOpened = (props) => {
 							<span className="text-nike-black">Learn more</span>
 						</p>
 					</div>
-					<div>
-						<Button_shop title="Join Us" buttonColor="black" />
-						<Button_shop title="Sign In" styles="border" />
+					<div className="pl-8 mt-4">
+						<Button_shop
+							title="Join Us"
+							buttonColor="bg-black"
+							buttonTextColor="white"
+							styles='mr-4'
+						/>
+						<Button_shop
+							title="Sign In"
+							buttonColor="bg-white"
+							styles="border"
+						/>
 					</div>
 				</motion.div>
 			</div>

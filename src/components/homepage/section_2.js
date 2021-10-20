@@ -6,7 +6,7 @@ const Section_Two = (props) => {
 		<div className="">
 			<p className="text-2xl mt-16 mb-5">Featured Footwear</p>
 			<div
-				className="h-xxll bg-cover cursor-pointer flex flex-col bg-center"
+				className="h-screen max-h-450 md:max-h-550 bg-cover cursor-pointer flex flex-col bg-center"
 				style={{
 					backgroundImage: `url(${props.props.response.results[5].urls.full})`,
 				}}
@@ -18,8 +18,9 @@ const Section_Two = (props) => {
 				<p>Shoes that are always forward-facing and future embracing.</p>
 				<Button_shop
 					styles="self-center my-6"
+					title="Shop"
 					buttonTextColor="white"
-					buttonColor="black"
+					buttonColor="bg-black"
 				/>
 			</div>
 		</div>

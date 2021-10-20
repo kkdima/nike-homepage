@@ -7,6 +7,15 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			screens: {
+				tablet: '640px',
+			},
+			maxHeight: {
+				// prettier-ignore
+				'450': '450px',
+				// prettier-ignore
+				'550': '550px',
+			},
 			maxWidth: {
 				// prettier-ignore
 				'880': '880px',

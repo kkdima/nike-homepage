@@ -26,7 +26,12 @@ const Section_Three = (props) => {
 					</div>
 					<div className="absolute left-9 bottom-0">
 						<p className="text-white text-xl">New Fits for Fall</p>
-						<Button_shop styles="self-center my-6" />
+						<Button_shop
+							styles="self-center my-6"
+							title="Shop"
+							buttonTextColor="black"
+							buttonColor="bg-white"
+						/>
 					</div>
 				</div>
 				<div className="hidden lg:flex relative h-xxll border flex relative">
@@ -40,7 +45,11 @@ const Section_Three = (props) => {
 					</div>
 					<div className="absolute left-9 bottom-0">
 						<p className="text-white text-xl">New Fits for Fall</p>
-						<Button_shop styles="self-center my-6" />
+						<Button_shop
+							styles="self-center my-6"
+							title="Shop"
+							buttonColor="bg-white"
+						/>
 					</div>
 				</div>
 			</div>
