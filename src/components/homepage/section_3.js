@@ -7,8 +7,8 @@ const Section_Three = (props) => {
 		<div className="">
 			<p className="text-2xl mt-16 mb-5">Trending Now</p>
 			<div className="lg:grid lg:grid-cols-2 lg:gap-4">
-				<div className="relative h-xxll border flex relative">
-					<div className="w-1/2 relative">
+				<div className="relative h-screen max-h-450 md:max-h-550 border flex relative">
+					<div className="w-full tablet:w-1/2 relative">
 						<Image
 							src={props.props.response.results[7].urls.full}
 							layout="fill"
@@ -16,7 +16,7 @@ const Section_Three = (props) => {
 							alt="nike"
 						/>
 					</div>
-					<div className="w-1/2 relative">
+					<div className="w-1/2 relative hidden tablet:flex">
 						<Image
 							src={props.props.response.results[11].urls.full}
 							layout="fill"
