@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
 import { AiOutlinePlus } from 'react-icons/ai';
 import { AiOutlineMinus } from 'react-icons/ai';
@@ -34,7 +34,7 @@ const Footer_Two = (props) => {
 		<motion.div
 			layout
 			transition={{ ease: 'easeOut', duration: 0.4 }}
-			className="w-full bg-nike-black p-6 md:p-14 font-helvetica-neue-medium"
+			className="w-full bg-nike-black p-6 md:p-14 font-helvetica-neue-medium overflow-x-hidden"
 		>
 			{/* Row 1 */}
 			<motion.div layout className="sm:flex justify-between">

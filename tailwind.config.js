@@ -7,14 +7,29 @@ module.exports = {
 	darkMode: false, // or 'media' or 'class'
 	theme: {
 		extend: {
+			fontSize: {
+				'1.6vw': '5vw',
+			},
 			screens: {
 				tablet: '640px',
 			},
+			minHeight: {
+				// prettier-ignore
+				'300': '300px',
+			},
 			maxHeight: {
+				// prettier-ignore
+				'300': '300px',
 				// prettier-ignore
 				'450': '450px',
 				// prettier-ignore
 				'550': '550px',
+			},
+			minWidth: {
+				// prettier-ignore
+				'300': '300px',
+				// prettier-ignore
+				'320': '320px',
 			},
 			maxWidth: {
 				// prettier-ignore
@@ -46,6 +61,16 @@ module.exports = {
 			height: {
 				// prettier-ignore
 				'xxll': '550px',
+				// prettier-ignore
+				'300': '300px',
+			},
+			width: {
+				// prettier-ignore
+				'300': '300px',
+			},
+			padding: {
+				// prettier-ignore
+				'2/3': '66.666667%',
 			},
 			fontFamily: {
 				// prettier-ignore
@@ -60,5 +85,8 @@ module.exports = {
 			},
 		},
 	},
-	plugins: [require('@tailwindcss/forms')],
+	plugins: [
+		require('@tailwindcss/forms'),
+		require('@tailwindcss/aspect-ratio'),
+	],
 };

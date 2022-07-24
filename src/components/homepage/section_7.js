@@ -15,21 +15,21 @@ const Section_Seven = () => {
 				<p className="text-center text-6xl mb-7 font-serif">
 					Where All <br /> Athletes Belong
 				</p>
-				<p className="w-2/3 text-center font-normal m-auto mb-7">
+				<p className="tablet:w-2/3 text-center font-normal tablet:m-auto">
 					Things are better as a Nike Member. Get first and exclusive access to
 					the newest styles & innovation, free shipping, birthday rewards and
 					more.
 				</p>
-				<div className="flex justify-center">
+				<div className="flex justify-center mt-7">
 					<Button_Shop
 						buttonTextColor="white"
-						buttonColor="black"
+						buttonColor="bg-black"
 						title="Join Us"
 						styles="mr-3"
 					/>
 					<Button_Shop
 						buttonTextColor="white"
-						buttonColor="black"
+						buttonColor="bg-black"
 						title="Sign In"
 					/>
 				</div>

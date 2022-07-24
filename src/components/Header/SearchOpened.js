@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { FiSearch } from 'react-icons/fi';
 import { GrFormClose } from 'react-icons/gr';
 import { motion, AnimatePresence, AnimateSharedLayout } from 'framer-motion';
@@ -6,14 +6,28 @@ import {
 	SearchVariants,
 	SearchInputVariants,
 	PopularSearchVariants,
-} from './Header_Variants';
-import { popularSearch } from './Header_Data';
+} from './Header_framer_variants';
+import { popularSearch } from './Navbar/Header_Data';
 import useLockBodyScroll from '../../hooks/use-lock-body-scroll';
 
-const Search = (props) => {
-	const { isSearchToggled, setIsSearchToggled } = { ...props };
+const Search = ({
+	isSearchToggled,
+	setIsSearchToggled,
+	isSearchSelectionToggled,
+	forwardedReF,
+}) => {
 	const inputEl = useRef(null);
-	
+
+	const onButtonClick = () => {
+		// `current` points to the mounted text input element
+		inputEl.current.focus();
+		inputEl.current.select();
+	};
+
+	setTimeout(() => {
+		onButtonClick();
+	}, 1);
+
 	useLockBodyScroll();
 
 	return (
@@ -28,6 +42,8 @@ const Search = (props) => {
 						<motion.div className="flex justify-end relative">
 							<motion.input
 								layout
+								// ref={inputEl}
+								ref={inputEl}
 								variants={SearchInputVariants}
 								animate={isSearchToggled ? 'opened' : 'closed'}
 								className={`input pl-10 bg-nike-light-gray-bg border-none rounded-full`}
@@ -64,7 +80,10 @@ const Search = (props) => {
 							animate="opened"
 							className="ml-3"
 						>
-							<motion.h2 className=" text-gray-700 mb-2 mt-12">
+							<motion.h2
+								className=" text-gray-700 mb-2 mt-12"
+								onClick={onButtonClick}
+							>
 								Popular Search Terms
 							</motion.h2>
 							{popularSearch.map((term) => (

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FeaturedSection } from './Footer_data';
 
@@ -29,7 +29,6 @@ const FooterMenuColumn = (props) => {
 				<DepartmentsList
 					department={props.department}
 					width={width}
-					department={props.department}
 					isMobileTitleClicked={isMobileTitleClicked}
 				/>
 			) : (

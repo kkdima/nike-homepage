@@ -18,18 +18,25 @@ const Section_Five = (props) => {
 						width: '100%',
 					}}
 				/>
-				<div className="absolute left-9 bottom-0 mb-8">
-					<p className="uppercase text-5xl font-futura text-white tracking-tighter">
+
+				<div className="tablet:absolute left-9 bottom-0 mt-5 tablet:mb-8">
+					<p className="uppercase text-5xl font-futura tablet:text-white tracking-tighter">
 						Presenting <br />
 						Nike Fleece
 					</p>
-					<p className="my-5 text-white">
+					<p className="my-5 tablet:text-white">
 						We all have to go sweats &amp; a fav hoodie, <br />
 						but Nike Fleece is so much more.
 					</p>
 					<div>
-						<Button_shop styles="mr-5" />
-						<Button_shop title="Explore" />
+						<Button_shop
+							title="Shop"
+							styles="mr-5 bg-black tablet:bg-white text-white tablet:text-black"
+						/>
+						<Button_shop
+							title="Explore"
+							styles="bg-black tablet:bg-white text-white tablet:text-black"
+						/>
 					</div>
 				</div>
 			</div>

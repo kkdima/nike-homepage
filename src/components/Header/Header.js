@@ -5,10 +5,11 @@ import Search from './Search';
 import SearchOpened from './SearchOpened';
 import { FiHeart, FiShoppingBag } from 'react-icons/fi';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HeaderHolderVariants } from './Header_Variants';
+import { HeaderHolderVariants } from './Header_framer_variants';
 import HamburgerMenuIcon from './Hamburger_Menu_Icon';
 import HamburgerMenuOpened from './Hamburger_Menu_Opened';
 // import  HamburgerMenuOpened  from './Hamburger_Menu_Opened';
+import Navbar from './Navbar/Navbar';
 
 const Header = () => {
 	const [width, setWidth] = useState(0);
@@ -39,10 +40,8 @@ const Header = () => {
 	return (
 		<motion.div className="w-full">
 			<FirstRow />
-
 			{/* Second row: */}
-			<motion.div className="py-2 px-6 lg:px-12 flex justify-between"
-			>
+			<motion.div className="py-2 px-6 lg:px-12 flex justify-between ">
 				{/* Logo: */}
 				<AnimatePresence>
 					{!isSearchToggled && (
@@ -63,25 +62,14 @@ const Header = () => {
 					)}
 				</AnimatePresence>
 
-				{/* <ul className="hidden lg:flex flex justify-between self-center font-medium">
-					<li className="mr-5 whitespace-nowrap">New Releases</li>
-					<li className="mr-5 pointer">Men</li>
-					<li className="mr-5">Women</li>
-					<li className="mr-5">Kids</li>
-					<li className="mr-5">Customize</li>
-					<li className="mr-5">Sale</li>
-					<li className="mr-5 whitespace-nowrap hidden gradation:visible">
-						Back to School
-					</li>
-				</ul> */}
-
+				<Navbar />
 				<motion.div className="flex ">
 					<motion.div className="lg:order-2 w-9 h-9 hidden lg:flex mr-3 rounded-full hover:bg-nike-light-gray-bg-hovered">
 						<FiHeart className="m-auto mt-2" size="1.4rem" />
 					</motion.div>
 
-					<motion.div className="lg:order-last self-center rounded-full mr-3 w-9 h-9 hover:bg-nike-light-gray-bg-hovered flex items-center justify-center">
-						<FiShoppingBag size="1.4rem" />
+					<motion.div className="lg:order-last self-center rounded-full mr-3 w-9 h-9 hover:bg-nike-light-gray-bg-hovered flex items-center justify-center items-start">
+						<FiShoppingBag className="m-auto" size="1.4rem" />
 					</motion.div>
 
 					{isSearchToggled ? (

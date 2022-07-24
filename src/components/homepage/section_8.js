@@ -1,9 +1,14 @@
 import React from 'react';
+import styles from './section_6.module.css';
 
 const Section_Eight = (props) => {
 	return (
-		<div className="grid grid-cols-3 gap-4 mt-16">
-			<div>
+		<div
+			className={`mt-12 mb-16 flex ${styles.container} overflow-x-scroll smoothScrolling lg:grid lg:grid-cols-3 lg:gap-10`}
+		>
+			<div
+				className={` ${styles.child} flex-shrink-0 w-2/3 lg:w-auto mr-6 lg:mr-0 smoothScrolling font-medium cursor-pointer`}
+			>
 				<div
 					className="w-full h-72 bg-cover"
 					style={{
@@ -12,7 +17,9 @@ const Section_Eight = (props) => {
 				/>
 				<p className="text-xl mt-5">Exclusive Nike Shopping Perks</p>
 			</div>
-			<div>
+			<div
+				className={` ${styles.child} flex-shrink-0 w-2/3 lg:w-auto mr-6 lg:mr-0 smoothScrolling font-medium cursor-pointer`}
+			>
 				<div
 					className="w-full h-72 bg-cover"
 					style={{
@@ -21,7 +28,9 @@ const Section_Eight = (props) => {
 				/>
 				<p className="text-xl mt-5">First & Exclusive Access</p>
 			</div>
-			<div>
+			<div
+				className={` ${styles.child} flex-shrink-0 w-2/3 lg:w-auto lg:mr-0 smoothScrolling font-medium cursor-pointer`}
+			>
 				<div
 					className="w-full h-72 bg-cover"
 					style={{

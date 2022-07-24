@@ -28,7 +28,7 @@ const Section_Six = () => {
 			>
 				{images.map((department) => (
 					<div
-						className={`flex-shrink-0 w-2/3 lg:w-auto mr-6 lg:mr-0 smoothScrolling font-medium cursor-pointer ${styles.child}`}
+						className={` ${styles.child} flex-shrink-0 w-2/3 lg:w-auto mr-6 lg:mr-0 smoothScrolling font-medium cursor-pointer`}
 						key={department.id}
 						f
 					>
@@ -41,11 +41,6 @@ const Section_Six = () => {
 					</div>
 				))}
 			</div>
-			{/* <div className="flex overflow-scroll">
-				<div className="w-96 flex-shrink-0 h-40 bg-gray-200 border mx-3"></div>
-				<div className="w-96 flex-shrink-0 h-40 bg-gray-200 border mx-3"></div>
-				<div className="w-96 flex-shrink-0 h-40 bg-gray-200 border mx-3"></div>
-			</div> */}
 		</div>
 	);
 };

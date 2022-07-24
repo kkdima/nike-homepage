@@ -1,8 +1,11 @@
 import React from 'react';
 import { IoIosArrowForward } from 'react-icons/io';
 import { motion, AnimatePresence } from 'framer-motion';
-import { HamburgerMenuBackground, HamburgerMenuSide } from './Header_Variants';
-import { hamburgerSideMenu } from './Header_Data';
+import {
+	HamburgerMenuBackground,
+	HamburgerMenuSide,
+} from './Header_framer_variants';
+import { hamburgerSideMenu } from './Navbar/Header_Data';
 import HamburgerMenuIcon from './Hamburger_Menu_Icon';
 import Button_shop from '../ui/button_shop';
 import useLockBodyScroll from '../../hooks/use-lock-body-scroll';
@@ -18,12 +21,13 @@ const HamburgerMenuOpened = (props) => {
 					initial="initial"
 					animate="animate"
 					className="w-full h-screen backdrop-filter backdrop-blur-sm backdrop-contrast-100"
+					onClick={() => props.setIsHamburgerToggle(!props.isHamburgerToggle)}
 				/>
 				<motion.div
 					variants={HamburgerMenuSide}
 					initial="initial"
 					animate="animate"
-					className="flex flex-col bg-white right-0 top-0 border overflow-scroll py-2"
+					className="flex flex-col bg-white min-w-320 right-0 top-0 border overflow-scroll py-2"
 					layout
 				>
 					<div className="px-6 relative flex justify-end">
@@ -73,7 +77,7 @@ const HamburgerMenuOpened = (props) => {
 							title="Join Us"
 							buttonColor="bg-black"
 							buttonTextColor="white"
-							styles='mr-4'
+							styles="mr-4"
 						/>
 						<Button_shop
 							title="Sign In"

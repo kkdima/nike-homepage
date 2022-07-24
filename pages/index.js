@@ -12,7 +12,6 @@ import Section_Eight from '../src/components/homepage/section_8';
 
 export default function Home() {
 	const [horizontalImages, setHorizontalImages] = useState(null);
-	const [verticalImages, setVerticalImages] = useState(null);
 
 	const unsplash = createApi({
 		accessKey: process.env.NEXT_PUBLIC_ACCESS_KEY,
@@ -63,8 +62,8 @@ export default function Home() {
 		fetchVerticalImages();
 	}, []);
 
-	if ((horizontalImages, verticalImages) === null) {
-		return <div>Loading...</div>;
+	if (horizontalImages === null) {
+		return <div className="text-center">Loading...</div>;
 		// } else if (horizontalImages.errors && verticalImages.errors) {
 		// 	return (
 		// 		<div>
@@ -82,8 +81,8 @@ export default function Home() {
 				<main className="flex flex-col px-6 lg:px-12 font-helvetica-neue-medium-cond overflow-hidden">
 					<Section_One props={horizontalImages} />
 					<Section_Two props={horizontalImages} />
-					<Section_Three props={verticalImages} />
-					<Section_Four props={verticalImages} />
+					<Section_Three />
+					<Section_Four />
 					<Section_Five props={horizontalImages} />
 					<Section_Six />
 					<Section_Seven />

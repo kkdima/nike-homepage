@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 const HamburgerMenuIcon = (props) => {
 	// const { isHamburgerToggle, setIsHamburgerToggle } = { ...props };
-	console.log(props);
+	// console.log(props);
 	return (
 		<motion.div className="lg:hidden w-9 h-9 rounded-full hover:bg-nike-light-gray-bg-hovered">
 			<HamburgerMenu
